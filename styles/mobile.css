@@ -7,17 +7,8 @@
 }
 
 body {
-    font-size: 12px;
+    font-size: 16px;
     font-family: 'Poppins', sans-serif;
-}
-
-#title {
-    background-color: cornflowerblue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 25%;
 }
 
 h1 {
@@ -32,14 +23,7 @@ h2 {
     color: gray;
 }
 
-.main-container {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-#login-form {
+form {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -47,7 +31,7 @@ h2 {
     padding: 20px;
 }
 
-#login-form div {
+form div {
     margin-bottom: 20px;
 }
 
@@ -57,7 +41,7 @@ input[type="password"] {
     padding: 10px;
 }
 
-#login,#register {
+input[type="submit"] {
     width: 100%;
     padding: 10px;
     border: none;
@@ -74,4 +58,30 @@ input[type="password"] {
     font-size: 12px;
 }
 
+.main-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 
+#title {
+    background-color: cornflowerblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 25%;
+}
+
+#email-verification-form {
+    display: block;
+}
+
+#code-verification-form {
+    display: block;
+}
+
+#new-password-form {
+    display: block;
+}
