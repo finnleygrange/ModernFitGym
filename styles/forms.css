@@ -1,0 +1,53 @@
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+form .form-group {
+  margin-bottom: 20px;
+}
+
+form input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: cornflowerblue;
+  cursor: pointer;
+}
+
+form .forgot-password {
+  display: flex;
+  justify-content: right;
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+form .forgot-password a {
+  color: gray;
+  text-decoration: none;
+}
+
+.login-here a,
+.register-here a {
+  text-decoration: none;
+  color: cornflowerblue;
+}
+
+form .form-title {
+  font-size: 18px;
+  font-weight: 300;
+  color: gray;
+}

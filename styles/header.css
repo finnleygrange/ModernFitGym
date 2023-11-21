@@ -1,0 +1,29 @@
+/* styles.css */
+
+/* Header styles */
+header {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+}
+
+.header-right ul {
+  list-style: none;
+  display: flex;
+}
+
+.header-right ul li {
+  margin-right: 2.5rem;
+}
+
+.header-right a {
+  text-decoration: none;
+  color: #243a47;
+}
+
+.header-right a:hover {
+  text-decoration: underline;
+}

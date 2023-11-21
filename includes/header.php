@@ -1,12 +1,14 @@
-<div class="header-main">
+<header>
     <div class="header-left">
-        <img class="logo" src="images/logo.jpg">
+        <img src="#" alt="Logo">
     </div>
     <div class="header-right">
-        <a class="services">Services</a>
-        <a class="about-us">About us</a>
-        <a class="contact-us">Contact us</a>
-        <a class="log-in">Log in</a>
-        <a class="register">Register</a>
+        <ul>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="services.php">Services</a></li>
+            <li><a href="contact.php">Contact</a></li>
+            <li><a href="login.php">Login</a></li>
+            <li><a href="register.php">Register</a></li>
+        </ul>
     </div>
-</div>
+</header>
