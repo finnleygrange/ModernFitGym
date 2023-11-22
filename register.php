@@ -1,6 +1,32 @@
 <?php include("includes/head.php") ?>
 <?php include("includes/header.php") ?>
 
+<?php
+include ("php/config.php");
+if (isset($_POST['submit'])) {
+    $email = $_POST['email'];
+    $name = $_POST['name'];
+    $password = $_POST['password'];
+
+    $verify_query = mysqli_query($con, "SELECT Email FROM users WHERE Email='$email'");
+
+    if (mysqli_num_rows($verify_query) != 0) {
+        echo "<div class='message'>
+                <p>This email has already been used.</p>
+              </div> <br>";
+        echo "<a href='javascript:self.history.back()'><button class='btn'>Go Back</button></a>";
+    } else {
+        mysqli_query($con, "INSERT INTO users(Email, Name, Password) VALUES('$email','$name','$password')") or die("Error");
+
+        echo "<div class='message'>
+                <p>Registration Successful!.</p>
+              </div> <br>";
+        echo "<script>setTimeout(function(){ window.location.href = 'login.php'; }, 2000);</script>";
+    }
+} else {
+
+?>
+
 <div class="main-container">
     <div class="form-container">
         <form action="">
@@ -34,5 +60,6 @@
     </div>
 
 </div>
+<?php } ?>
 
 <?php include("includes/footer.php") ?>
