@@ -1,44 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/mobile.css">
-    <link rel="stylesheet" href="styles/desktop.css" media="screen and (min-width: 768px)">
-    <script src="scripts/script.js" defer></script>
-    <title>ModernFit Gym | Register</title>
-</head>
-<body>
-    <div class="main-container">
-        <h1 id="title">ModernFit Gym</h1>
-        <form action="">
-            <div>
-                <h2>Create New Account</h2>
-            </div>
-            <div>
-                <label for="email">Email</label>
-                <input type="text" name="email" id="email" placeholder="Email" required>
-            </div>
-            <div>
-                <label for="name">Name</label>
-                <input type="text" name="name" id="name" placeholder="Name" required>
-            </div>
-            <div>
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" placeholder="Password" required>
-            </div>
-            <div>
-                <label for="password-confirm">Confirm Password</label>
-                <input type="password" name="password-confirm" id="password-confirm" placeholder="Confirm Password" required>
-            </div>
-            <div>
-                <input type="submit" value="Register" id="register">
-            </div>
-        </form>
-        <div>
-            <p>Already have an account? <a href="login.html">Login Here</a></p>
+<?php include("includes/head.php") ?>
+<?php include("includes/header.php") ?>
+
+<div class="main-container">
+    <form action="">
+        <div class="form-group">
+            <h2 class="form-title">Create a new account</h2>
         </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" placeholder="Type your email" required>
+        </div>
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" name="name" id="name" placeholder="Type your full name" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Type your password" required>
+        </div>
+        <div class="form-group">
+            <label for="password-confirm">Confirm Password</label>
+            <input type="password" name="password-confirm" id="password-confirm" placeholder="Confirm your password"
+                required>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Register" id="register">
+        </div>
+    </form>
+    <div class="form-group">
+        <p class="login-here">Already have an account? <a href="login.php">Login Here</a></p>
     </div>
-</body>
-<?php include("includes/header.php") ?>;
-</html>
+</div>
+
+<?php include("includes/footer.php") ?>

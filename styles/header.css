@@ -1,0 +1,50 @@
+/* styles.css */
+
+/* Header styles */
+.header-main {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+  margin-bottom: 2rem;
+  position: fixed;
+}
+
+.header-right ul {
+  list-style: none;
+  display: flex;
+}
+
+.header-right ul li {
+  margin-right: 2.5rem;
+}
+
+.header-right a {
+  text-decoration: none;
+  color: black;
+}
+
+.header-right a:hover {
+  text-decoration: underline;
+}
+
+.header-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-left a {
+  margin-right: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+}
+
+.header-left i {
+  margin-right: 1rem;
+}

@@ -1,12 +1,18 @@
 <div class="header-main">
     <div class="header-left">
-        <img class="logo" src="images/logo.jpg">
+        <a href="index.php">
+            <i class="fa-solid fa-dumbbell fa-bounce fa-lg" style="color: #6494ed;"></i>
+            <p>ModernFit Gym</p>
+        </a>
     </div>
     <div class="header-right">
-        <a class="header-link" href="index.php">Services</a>
-        <a class="header-link" href="about-us.php">About us</a>
-        <a class="header-link" href="contact-us.php">Contact us</a>
-        <a class="header-link" href="login.php">Log in</a>
-        <a class="header-link" href="register.php">Register</a>
+        <ul>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="about-us.php">About Us</a></li>
+            <li><a href="services.php">Services</a></li>
+            <li><a href="contact-us.php">Contact</a></li>
+            <li><a href="login.php">Login</a></li>
+            <li><a href="register.php">Register</a></li>
+        </ul>
     </div>
 </div>
