@@ -12,7 +12,9 @@
 body {
   font-size: 16px;
   font-family: "Poppins", sans-serif;
-  background: #f8f8f8;
+  background-color: #526d82;
+  color: #dde6ed;
+  overflow: hidden;
 }
 
 .main-container {
@@ -20,94 +22,13 @@ body {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
 }
 
-.contact-us {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  width: 100%;
-  max-width: 1200px;
-}
-
-.contact-division {
-  width: 100%;
-  max-width: 500px;
-  margin: 2rem;
-}
-
-.content-title {
-  color: #333;
-  font-size: 18px;
-}
-
-.content-paragraph {
-  color: #555;
-  font-size: 16px;
-}
-
-.welcome-message {
-  color: black;
-  text-align: center;
-  padding-bottom: 0;
-  margin-bottom: 0;
-}
-
-.overview-message {
-  color: black;
-  text-align: center;
-  padding-top: 0;
-  margin-top: 0;
-  font-size: 30px;
-}
-
-.service-box-container {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0);
-  width: 75%;
-}
-
-.service-box {
-  display: inline;
-  display: block;
-  padding: 70px;
-}
-
-.service-box-image {
-  -webkit-user-drag: none;
-  width: 200px;
-}
-
-.service-box-header {
-  color: black;
-  font-size: 30px;
-  padding-left: 5px;
-}
-
-.service-box-paragraph {
-  font-size: 17px;
-}
-
-#service-box-image-1,
-#service-box-image-3 {
-  float: left;
-}
-
-#service-box-image-2 {
-  float: right;
-}
-
-#service-box-header-1,
-#service-box-header-3,
-#service-box-paragraph-1,
-#service-box-paragraph-3 {
-  text-align: right;
-}
-
-#service-box-header-2,
-#service-box-paragraph-2 {
-  text-align: left;
+/* Style the welcome message */
+h1 {
+  font-size: 72px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
 }

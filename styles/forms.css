@@ -1,9 +1,18 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 form {
   display: flex;
   flex-direction: column;
   width: 100%;
   max-width: 400px;
-  padding: 20px;
+  justify-content: center;
+  padding: 1rem;
 }
 
 form .form-group {
@@ -14,7 +23,7 @@ form input[type="text"],
 input[type="password"] {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #27374d;
   border-radius: 5px;
 }
 
@@ -23,8 +32,8 @@ form input[type="submit"] {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  color: white;
-  background-color: cornflowerblue;
+  color: #dde6ed;
+  background-color: #27374d;
   cursor: pointer;
 }
 
@@ -36,18 +45,26 @@ form .forgot-password {
 }
 
 form .forgot-password a {
-  color: gray;
+  color: #9db2bf;
   text-decoration: none;
 }
 
 .login-here a,
 .register-here a {
   text-decoration: none;
-  color: cornflowerblue;
+  color: #9db2bf;
 }
 
 form .form-title {
   font-size: 18px;
   font-weight: 300;
-  color: gray;
+  color: #dde6ed;
+}
+
+#code-verification-form {
+  display: none;
+}
+
+#new-password-form {
+  display: none;
 }
