@@ -1,5 +1,6 @@
 <?php 
     include ("php/config.php");
+    session_start();
     if (isset($_POST["email"])) {
         $email = $_POST["email"];
         $password = $_POST["password"];
@@ -12,6 +13,7 @@
 
             if ($newEmail == $email && $newPass == $password) {
                 setcookie("email",$email,time() + (10 * 365 * 24 *60 * 60));//Will never expire
+                $_SESSION['loggedIn'] = true;
                 header('Location: homepage.php');
                 die();
             }

@@ -1,5 +1,9 @@
 <?php
-      $loggedIn = false;   
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+    $loggedIn = isset($_SESSION['loggedIn']) ? $_SESSION['loggedIn'] : false;
 ?>
 
 <div class="header-main">
@@ -21,7 +25,7 @@
                     echo '<li>|</li>';
                     echo '<li><a href="dashboard.php">Dashboard</a></li>';
                     echo '<li><a href="profile.php">Profile</a></li>';
-                    echo '<li><a href="logout.php">Logout</a></li>';
+                    echo '<li><a href="includes/logout.php">Logout</a></li>';
                 } 
                 else {
                     echo '<li>|</li>';
