@@ -16,7 +16,6 @@ if (session_status() == PHP_SESSION_NONE) {
     <div class="header-right">
         <ul>
             <li><a href="index.php">Home</a></li>
-            <li><a href="about-us.php">About Us</a></li>
             <li><a href="services.php">Services</a></li>
             <li><a href="contact-us.php">Contact</a></li>
 
@@ -24,12 +23,12 @@ if (session_status() == PHP_SESSION_NONE) {
                 if ($loggedIn) {
                     echo '<li>|</li>';
                     echo '<li><a href="dashboard.php">Dashboard</a></li>';
-                    echo '<li><a href="profile.php">Profile</a></li>';
                     echo '<li><a href="includes/logout.php">Logout</a></li>';
+                    echo '<li><a href="profile.php"><i class="fa-regular fa-user fa-xl" style="color: #6494ed;"></i></a></li>';
                 } 
                 else {
                     echo '<li>|</li>';
-                    echo '<li><a href="login.php">Login</a></li>';
+                    echo '<li><a href="login.php"><i class="fa-regular fa-user fa-xl" style="color: #6494ed;"></i></a></li>';
                 }
             ?>
         </ul>

@@ -10,16 +10,18 @@
         while ($row = mysqli_fetch_assoc($result)) {
             $newEmail = $row['Email'];
             $newPass = $row['Password'];
+            $userName = $row['Name'];
 
             if ($newEmail == $email && $newPass == $password) {
-                setcookie("email",$email,time() + (10 * 365 * 24 *60 * 60));//Will never expire
+                $_SESSION["email"] = $email;
                 $_SESSION['loggedIn'] = true;
-                header('Location: homepage.php');
+                $_SESSION['userName'] = $userName;
+                header('Location: member-area.php');
                 die();
             }
         }
 
-        echo "<p>The username or password that you entered was incorrect</p>";
+        echo "<p class='error'>The username or password that you entered was incorrect</p>";
 
     } 
 ?>
@@ -40,7 +42,7 @@
             <div class=form-group>
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" placeholder="Type your password" required>
-                <p class="forgot-password"><a href="forgot-password.php">Forgot password?</a></p>
+                <p class="forgot-password"><a href="#">Forgot password?</a></p>
             </div>
             <div class=form-group>
                 <input type="submit" value="Login" id="submit">
