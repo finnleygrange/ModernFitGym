@@ -7,8 +7,8 @@
         <h2>Hi, <?php echo $userName;?></h2>
         <p>Tap the icon to view your PIN</p>
         <div>
-            <i class="fa-solid fa-eye-slash"></i>
-            <input type="password" name="" id="">
+            <i class="fa-solid fa-eye-slash" onclick="togglePin()"></i>
+            <input type="password" name="" id="pinInput">
         </div>
     </div>
 </div>
@@ -17,11 +17,14 @@
 function togglePin() {
     var pinInput = document.getElementById("pinInput");
 
+
     if (pinInput.type === "password") {
         pinInput.type = "text";
     } else {
         pinInput.type = "password";
-    }
+    };
+
 }
+
 </script>
 <?php include("includes/footer.php") ?>

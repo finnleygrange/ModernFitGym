@@ -33,6 +33,11 @@ body {
   align-items: center;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
 .profile-container {
   background-color: #27374d;
   border-radius: 5%;
@@ -82,4 +87,23 @@ input[type="file"] {
 .right {
   display: flex;
   justify-content: right;
+}
+
+.change-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 5%;
+}
+
+.options {
+  margin-top: 10%;
+  text-align: center;
+}
+
+.option {
+  padding: 15px;
+
 }

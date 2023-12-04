@@ -2,20 +2,31 @@
 <?php include("includes/head.php") ?>
 <?php include("includes/header.php") ?>
 
-<h1>Change Details</h1>
-<p>Welcome, <?php echo $userName; ?>!</p>
+<?php 
+    include ("php/config.php");
+    if (isset($_POST["newName"])) {
+        $newName = $_POST["newName"];
+        $userEmail = $_SESSION["email"];
+        $query = "UPDATE users SET Name = '".$newName."' WHERE Email = '".$userEmail."'";
+        $command = mysqli_query($con, $query);
+        $_SESSION["userName"] = $newName;
+        header("Refresh:0");
+}
+?>
 
-<h2>Change Details:</h2>
-<form action="update-details.php" method="post">
-    <label for="newName">New Name:</label>
-    <input type="text" id="newName" name="newName" placeholder="Enter new name" required>
-    <br>
+<div class="change-details">
+    <h1>Change Details</h1>
+    <p>Welcome, <?php echo $userName; ?>!</p>
 
-    <!-- Add more fields as needed -->
+    <form action="" method="post">
+        <label for="newName">New Name:</label>
+        <input type="text" id="newName" name="newName" placeholder="Enter new name" required>
+        <br>
 
-    <input type="submit" value="Update Details">
-</form>
+        <!-- Add more fields as needed -->
 
-<p><a href="logout.php">Logout</a></p>
+        <input type="submit" value="Update Details">
+    </form>
+</div>
 
 <?php include("includes/footer.php") ?>

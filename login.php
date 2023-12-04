@@ -16,7 +16,7 @@
                 $_SESSION["email"] = $email;
                 $_SESSION['loggedIn'] = true;
                 $_SESSION['userName'] = $userName;
-                header('Location: member-area.php');
+                header('Location: dashboard.php');
                 die();
             }
         }
