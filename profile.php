@@ -10,7 +10,7 @@
                 echo "<p>$email</p>";
             ?>
 
-            <a href="change-details.php" style='color: #DDF2FD; text-decoration: underline;'>Edit Info</a>
+            <a class="editInfo" href="change-details.php">Edit Info</a>
         </div>
         <div class='centre'>
             <img class='profile-image' id="preview-image" src="images/blank-profile-picture.png" alt="">

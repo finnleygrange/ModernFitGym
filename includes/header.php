@@ -22,7 +22,7 @@ if (session_status() == PHP_SESSION_NONE) {
             <?php 
                 if ($loggedIn) {
                     echo '<li>|</li>';
-                    echo '<li><a href="dashboard.php">Dashboard</a></li>';
+                    echo '<li><a href="member-dashboard.php">Dashboard</a></li>';
                     echo '<li><a href="includes/logout.php">Logout</a></li>';
                     echo '<li><a href="profile.php"><i class="fa-regular fa-user fa-xl" style="color: #6494ed;"></i></a></li>';
                 } 
