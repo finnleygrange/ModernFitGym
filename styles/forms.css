@@ -13,7 +13,6 @@ form {
   max-width: 400px;
   justify-content: center;
   padding: 1rem;
-  background-color: #27374d;
 }
 
 form .form-group {
@@ -34,7 +33,7 @@ form input[type="submit"] {
   border: none;
   border-radius: 5px;
   color: #dde6ed;
-  background-color: #6494ed;
+  background-color: #27374d;
   cursor: pointer;
 }
 
@@ -68,4 +67,10 @@ form .form-title {
 
 #new-password-form {
   display: none;
+}
+
+.image-submit {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%,0);
 }

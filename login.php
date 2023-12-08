@@ -11,15 +11,12 @@
             $newEmail = $row['Email'];
             $newPass = $row['Password'];
             $userName = $row['Name'];
-            $pin = $row['Pin'];
 
             if ($newEmail == $email && $newPass == $password) {
                 $_SESSION["email"] = $email;
                 $_SESSION['loggedIn'] = true;
                 $_SESSION['userName'] = $userName;
-                $_SESSION['pin'] = $pin;
-
-                header('Location: member-dashboard.php');
+                header('Location: dashboard.php');
                 die();
             }
         }
