@@ -7,6 +7,7 @@ if (isset($_POST['email'])) {
     $email = $_POST['email'];
     $name = $_POST['name'];
     $password = $_POST['password'];
+    $pin = mt_rand(100000, 999999);
 
     $verify_query = mysqli_query($con, "SELECT Email FROM users WHERE Email='$email'");
 
@@ -15,7 +16,7 @@ if (isset($_POST['email'])) {
                 <p>This email has already been used.</p>
               </div> <br>";
     } else {
-        mysqli_query($con, "INSERT INTO users(Email, Name, Password) VALUES('$email','$name','$password')") or die("Error");
+        mysqli_query($con, "INSERT INTO users(Email, Name, Password, Pin) VALUES('$email','$name','$password', '$pin')") or die("Error");
 
         echo "<div class='message'>
                 <p>Registration Successful!.</p>
@@ -49,7 +50,7 @@ if (isset($_POST['email'])) {
                     required>
             </div>
             <div class="form-group">
-                <input type="submit" value="submit" id="submit">
+                <input type="submit" value="Submit" id="submit">
             </div>
             <div class="form-group">
                 <p class="login-here">Already have an account? <a href="login.php">Login Here</a></p>

@@ -17,19 +17,17 @@ function previewImage() {
   }
 }
 
-function toggleFeild() {
-  const feild = document.getElementById("passwordField");
-  const toggleFeild = document.getElementById("togglePassword");
+function togglePin() {
+  var pinInput = document.getElementById("pinInput");
+  var eye = document.getElementsByClassName("eye")[0];
 
-  if (type === "password") {
-    togglePassword.innerHTML = '<i class="fas fa-eye"></i>';
+  if (pinInput.type === "password") {
+    pinInput.type = "text";
+    eye.classList.remove("fa-eye-slash");
+    eye.classList.add("fa-eye");
   } else {
-    togglePassword.innerHTML = '<i class="fas fa-eye-slash"></i>';
+    pinInput.type = "password";
+    eye.classList.remove("fa-eye");
+    eye.classList.add("fa-eye-slash");
   }
 }
-
-toggleFeild.addEventListener("click", function () {
-  const type =
-    passwordField.getAttribute("type") === "password" ? "text" : "password";
-  passwordField.setAttribute("type", type);
-});
