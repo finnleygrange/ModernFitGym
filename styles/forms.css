@@ -69,3 +69,9 @@ form .form-title {
 #new-password-form {
   display: none;
 }
+
+.image-submit {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%,0);
+}
