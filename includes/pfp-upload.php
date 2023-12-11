@@ -41,7 +41,7 @@ if ($fileAllowed == 0){
     $_SESSION["errorMsg"] = $errorMsg;
     $_SESSION["profilePicture"] = $fileDir;
 } else {
-    $fileDir = "images/" . basename($_FILES["file"]["name"]);
+    $fileDir = "pfps/" . basename($_FILES["file"]["name"]);
     move_uploaded_file(($_FILES["file"]["tmp_name"]), $fileDir);
 }
 
