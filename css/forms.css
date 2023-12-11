@@ -1,0 +1,69 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  justify-content: center;
+  padding: 1rem;
+  background-color: #27374d;
+}
+
+form .form-group {
+  margin-bottom: 20px;
+}
+
+form input[type="text"],
+form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #27374d;
+  border-radius: 5px;
+}
+
+form input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: #dde6ed;
+  background-color: #6494ed;
+  cursor: pointer;
+}
+
+form .forgot-pinNumber {
+  display: flex;
+  justify-content: right;
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+form .forgot-pinNumber a {
+  color: #9db2bf;
+  text-decoration: none;
+}
+
+.login-here a,
+.register-here a {
+  text-decoration: none;
+  color: #9db2bf;
+}
+
+form .form-title {
+  font-size: 18px;
+  font-weight: 300;
+  color: #dde6ed;
+}
+
+.image-submit {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}

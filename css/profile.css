@@ -1,0 +1,45 @@
+.profile-container {
+  background-color: #27374d;
+  border-radius: 10px; /* Increased the border-radius for a smoother look */
+  width: 50%;
+  height: 600px;
+}
+
+.profile-info {
+  padding: 2.5rem;
+}
+
+.profile-image {
+  width: 256px;
+  height: 256px;
+  border-radius: 50%;
+}
+
+.profile-options {
+  padding: 1rem;
+}
+
+.upload-image {
+  display: flex;
+  justify-self: center;
+  cursor: pointer;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.image-submit {
+  text-align: center;
+  margin-top: 5%;
+}
+
+.image-submit input[type="submit"] {
+  border-top: 5%;
+  background-color: #6494ed;
+  color: #dde6ed;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}

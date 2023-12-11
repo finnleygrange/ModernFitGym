@@ -1,0 +1,37 @@
+.member-area {
+  background-color: #27374d;
+  width: 60%;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.pin-container input[type="password"],
+.pin-container input[type="text"] {
+  width: 50%;
+  height: 1.5rem;
+  border-radius: 0;
+  border: none;
+  background: none;
+  letter-spacing: 0.5rem;
+  font-size: 1.5rem;
+  color: #dde6ed;
+  margin-right: 2rem;
+}
+
+.pin-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.pin-container i {
+  margin-right: 1rem;
+}
+
+.forgot-pin {
+  width: 50%;
+  display: flex;
+  justify-content: right;
+  color: #dde6ed;
+}

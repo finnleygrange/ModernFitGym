@@ -1,0 +1,23 @@
+.nutrition-table {
+  display: flex;
+  flex-direction: column;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 20px;
+  background-color: #354864;
+}
+
+th {
+  background-color: #27374d;
+}
+
+tbody tr:hover {
+  background-color: #6494ed;
+}

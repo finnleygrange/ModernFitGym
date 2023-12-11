@@ -1,0 +1,22 @@
+/* Your existing styles */
+
+.footer {
+  background-color: #27374d;
+  color: #dde6ed;
+  padding: 50px;
+  text-align: center;
+}
+
+.contact-us {
+  display: flex;
+  justify-content: space-around;
+}
+
+.contact-division {
+  text-align: left;
+  padding: 25px;
+}
+
+.copyright {
+  margin-top: 1.5rem;
+}
