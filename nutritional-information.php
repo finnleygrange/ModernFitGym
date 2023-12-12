@@ -52,32 +52,7 @@ $result = mysqli_query($con, $sql);
         <button type = "button">Remove</button>
         <button type = "button">Edit</button>
         <Style> /* Tried to stlye it in the table.css but didnt work for some reason*/
-       .main-container {
-        position: relative;
-    }
-
-    .nutrion-table-btn {
-        position: absolute;
-        bottom: 140px; /* Adjust the distance from the bottom */
-        left: 50%;
-        transform: translateX(-50%);
-        text-align: center;
-    }
-
-    .nutrion-table-btn button {
-        padding: 10px 20px;
-        margin: 0 10px;
-        font-size: 16px;
-        cursor: pointer;
-       background-color: #483D8B; /*  Change to any colour youse want */
-        color: white;
-        border: none;
-        border-radius: 5px;
-    }
-
-    .nutrion-table-btn button:hover {
-        background-color: #6A5ACD;
-    }
+       
         </Style>
     </div>
 </div>
