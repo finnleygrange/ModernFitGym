@@ -71,7 +71,7 @@ $result = mysqli_query($con, $sql);
         <button type = "button">Remove</button>
         <button type = "button">Edit</button>
     </div>
- <!-- Add a form for adding nutritional information -->
+
  <form id="addForm" style="display: none;" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
             <label for="foodName">Food Name:</label>
             <input type="text" id="foodName" name="foodName" required>
@@ -97,7 +97,6 @@ $result = mysqli_query($con, $sql);
 
     <script>
         function showAddForm() {
-            // Show the add form and hide the table
             document.getElementById('addForm').style.display = 'block';
             document.querySelector('.nutrition-table table').style.display = 'none';
         }
