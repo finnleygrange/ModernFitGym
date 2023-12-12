@@ -69,7 +69,6 @@ $result = mysqli_query($con, $sql);
     <div class = "nutrion-table-btn">
         <button type="button" onclick="showAddForm()">Add</button>
         <button type = "button" onclick="removeLastRow()">Remove</button>
-        <button type = "button">Edit</button>
     </div>
 
  <form id="addForm" style="display: none;" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
