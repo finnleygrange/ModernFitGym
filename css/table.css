@@ -21,3 +21,7 @@ th {
 tbody tr:hover {
   background-color: #6494ed;
 }
+.nutrion-table-btn{
+  position: bottom;
+}
+

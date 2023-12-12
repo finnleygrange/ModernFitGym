@@ -47,6 +47,11 @@ $result = mysqli_query($con, $sql);
             </tbody>
         </table>
     </div>
+    <div class = "nutrion-table-btn">
+        <button id ="btn1" type = "button">Add</button>
+        <button type = "button">Remove</button>
+        <button type = "button">Edit</button>
+    </div>
 </div>
 <?php
 mysqli_close($con);
