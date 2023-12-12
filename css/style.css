@@ -6,7 +6,7 @@
 @import url("pin.css");
 @import url("forms.css");
 @import url("dashboard.css");
-
+@import url("homepage.css");
 * {
   margin: 0;
   padding: 0;
