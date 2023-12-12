@@ -68,7 +68,7 @@ $result = mysqli_query($con, $sql);
     </div>
     <div class = "nutrion-table-btn">
         <button type="button" onclick="showAddForm()">Add</button>
-        <button type = "button">Remove</button>
+        <button type = "button" onclick="removeLastRow()">Remove</button>
         <button type = "button">Edit</button>
     </div>
 
@@ -100,6 +100,18 @@ $result = mysqli_query($con, $sql);
             document.getElementById('addForm').style.display = 'block';
             document.querySelector('.nutrition-table table').style.display = 'none';
         }
+
+        function removeLastRow() {
+            var table = document.querySelector('.nutrition-table table');
+            var rowCount = table.rows.length;
+
+            if (rowCount > 1) {
+                table.deleteRow(rowCount - 1);
+            } else {
+                alert("No rows to remove.");
+            }
+        }
+    
     </script>
 </body>
 </html>
