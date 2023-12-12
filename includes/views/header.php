@@ -20,7 +20,7 @@ session_start();
     <header>
         <div class="header-main">
             <div class="header-left">
-                <a href="member-dashboard.php">
+                <a href="homepage.php">
                     <i class="fa-solid fa-dumbbell fa-bounce fa-lg" style="color: #6494ed;"></i>
                     <p>ModernFit Gym</p>
                 </a>

@@ -3,7 +3,7 @@ include("includes/views/header.php");
 ?>
 <div class="main-container">
     <div class="dashboard">
-        <h1>Welcome to the dashboard <?php echo $_SESSION['firstName']; ?>!</h1>
+        <h1>Welcome to the dashboard </h1>
         <div class="options">
             <p>Please select from the options listed below:</p>
             <ul>
