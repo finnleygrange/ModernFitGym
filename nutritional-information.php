@@ -6,7 +6,6 @@ if (!$con) {
     die("Connection failed: " . mysqli_connect_error());
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["addNutritionalInfo"])) {
-    // Process the form data and insert into the database
     $foodName = $_POST["foodName"];
     $calorieCount = $_POST["calorieCount"];
     $protein = $_POST["protein"];
@@ -18,13 +17,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["addNutritionalInfo"]))
             VALUES ('$foodName', $calorieCount, $protein, $carbohydrates, $fat, $fiber)";
 
     if (mysqli_query($con, $sql)) {
-        echo "<script>alert('Nutritional information added successfully!');</script>";
+        //
     } else {
         echo "<script>alert('Error adding nutritional information: " . mysqli_error($con) . "');</script>";
     }
 }
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["removeNutritionalInfo"])) {
+    $removeFoodID = $_POST["removeFoodID"];
+    
+    $deleteSql = "DELETE FROM nutritionalinformation WHERE FoodID = $removeFoodID";
 
-
+    if (mysqli_query($con, $deleteSql)) {
+        // 
+    } else {
+        echo "<script>alert('Error deleting nutritional information: " . mysqli_error($con) . "');</script>";
+    }
+}
 $sql = "SELECT * FROM nutritionalinformation";
 $result = mysqli_query($con, $sql);
 ?>
@@ -46,29 +54,34 @@ $result = mysqli_query($con, $sql);
                 </tr>
             </thead>
             <tbody>
-                <?php
-            if (mysqli_num_rows($result) > 0) {
-                while ($row = mysqli_fetch_assoc($result)) {
-                    echo "<tr>";
-                    echo "<td>" . $row["FoodID"] . "</td>";
-                    echo "<td>" . $row["FoodName"] . "</td>";
-                    echo "<td>" . $row["CalorieCount"] . "</td>";
-                    echo "<td>" . $row["Protein"] . "</td>";
-                    echo "<td>" . $row["Carbohydrates"] . "</td>";
-                    echo "<td>" . $row["Fat"] . "</td>";
-                    echo "<td>" . $row["Fiber"] . "</td>";
-                    echo "</tr>";
-                }
-            } else {
-                echo "<tr><td colspan='7'>No data available</td></tr>";
-            }
-            ?>
+    <?php
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo "<tr>";
+            echo "<td>" . $row["FoodID"] . "</td>";
+            echo "<td>" . $row["FoodName"] . "</td>";
+            echo "<td>" . $row["CalorieCount"] . "</td>";
+            echo "<td>" . $row["Protein"] . "</td>";
+            echo "<td>" . $row["Carbohydrates"] . "</td>";
+            echo "<td>" . $row["Fat"] . "</td>";
+            echo "<td>" . $row["Fiber"] . "</td>";
+            echo "<td>
+                        <form method='post' action='" . htmlspecialchars($_SERVER["PHP_SELF"]) . "'>
+                        <input type='hidden' name='removeFoodID' value='" . $row["FoodID"] . "'>
+                        <button type='submit' name='removeNutritionalInfo'>Remove</button>
+                    </form>
+                  </td>";
+            echo "</tr>";
+        }
+    } else {
+        echo "<tr><td colspan='8'>No data available</td></tr>";
+    }
+    ?>
             </tbody>
         </table>
     </div>
     <div class="nutrion-table-btn">
         <button type="button" onclick="showAddForm()">Add</button>
-        <button type="button" onclick="removeLastRow()">Remove</button>
     </div>
 
     <form id="addForm" style="display: none;" method="post"
@@ -99,17 +112,6 @@ $result = mysqli_query($con, $sql);
 function showAddForm() {
     document.getElementById('addForm').style.display = 'block';
     document.querySelector('.nutrition-table table').style.display = 'none';
-}
-
-function removeLastRow() {
-    var table = document.querySelector('.nutrition-table table');
-    var rowCount = table.rows.length;
-
-    if (rowCount > 1) {
-        table.deleteRow(rowCount - 1);
-    } else {
-        alert("No rows to remove.");
-    }
 }
 </script>
 </body>
