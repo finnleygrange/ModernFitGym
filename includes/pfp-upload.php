@@ -1,6 +1,7 @@
 <?php 
 session_start();
 
+include ("config.php");
 
 $file = $_FILES["file"]["name"]; //Name of file
 $fileSpacesRemoved = str_replace(" ","_", $file);
@@ -43,6 +44,12 @@ if ($fileAllowed == 0){
 } else {
     $fileDir = "pfps/" . basename($_FILES["file"]["name"]);
     move_uploaded_file(($_FILES["file"]["tmp_name"]), $fileDir);
+    session_start();
+    $_SESSION["pfp"] = basename($_FILES["file"]["name"]);
+    $id = $_SESSION['id'];
+    $pfpPath = 'includes/pfps/' . $_SESSION["pfp"];
+    $query = "INSERT INTO pfps (id,pfp) VALUES ('$id', '$pfpPath')";
+    $result = mysqli_query($con, $query);
 }
 
 header("Location: ".$_SERVER['HTTP_REFERER']);//Redirects back to profile page.

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2023 at 05:15 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Dec 13, 2023 at 08:58 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,7 +34,7 @@ CREATE TABLE `admins` (
   `Email` varchar(255) DEFAULT NULL,
   `PinNumber` varchar(255) DEFAULT NULL,
   `UserRole` varchar(50) DEFAULT 'admin'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -50,7 +50,7 @@ CREATE TABLE `logs` (
   `MealPortion` float DEFAULT NULL,
   `ExerciseDescription` text DEFAULT NULL,
   `ExerciseDuration` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -65,7 +65,7 @@ CREATE TABLE `members` (
   `Email` varchar(255) DEFAULT NULL,
   `PinNumber` varchar(255) DEFAULT NULL,
   `UserRole` varchar(50) DEFAULT 'member'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `members`
@@ -100,7 +100,7 @@ CREATE TABLE `nutritionalinformation` (
   `Carbohydrates` float DEFAULT NULL,
   `Fat` float DEFAULT NULL,
   `Fiber` float DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `nutritionalinformation`
@@ -110,6 +110,25 @@ INSERT INTO `nutritionalinformation` (`FoodID`, `FoodName`, `CalorieCount`, `Pro
 (8, 'Apple', 95, 0.5, 25, 0.3, 4.4),
 (9, 'Chicken Breast', 165, 31, 0, 3.6, 0),
 (10, 'Broccoli', 31, 2.5, 6, 0.3, 2.4);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pfps`
+--
+
+CREATE TABLE `pfps` (
+  `id` int(11) NOT NULL,
+  `pfp` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pfps`
+--
+
+INSERT INTO `pfps` (`id`, `pfp`) VALUES
+(0, 'includes/pfps/one piece wallpaper.jpg'),
+(0, 'includes/pfps/one piece wallpaper.jpg');
 
 -- --------------------------------------------------------
 
@@ -126,7 +145,7 @@ CREATE TABLE `progress` (
   `BodyFatPercentage` float DEFAULT NULL,
   `WorkoutDuration` int(11) DEFAULT NULL,
   `Comments` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -141,7 +160,7 @@ CREATE TABLE `trainers` (
   `Email` varchar(255) DEFAULT NULL,
   `PinNumber` varchar(255) DEFAULT NULL,
   `UserRole` varchar(50) DEFAULT 'trainer'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `trainers`

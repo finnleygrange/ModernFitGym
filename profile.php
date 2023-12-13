@@ -17,6 +17,18 @@
             <form action="includes/pfp-upload.php" method="post" enctype="multipart/form-data">
                 <?php if(isset($_SESSION['profilePicture'])) {$pfp = $_SESSION["profilePicture"]; echo "<img src=$pfp>";} ?>
                 <input type="file" name="file" id="file" accept="image/*" onchange="previewImage()">
+                <?php 
+                if (isset($_SESSION["pfp"])){
+                    $files = glob('includes/pfps/*.*');
+                    $pfpPath = 'includes/pfps/' . $_SESSION["pfp"];
+                    foreach ($files as $file) {
+                        if ($file == $pfpPath){
+                            echo "<script>document.getElementById('preview-image').setAttribute('src','$pfpPath');</script>";
+                        };
+                    };
+                    
+                }
+                ?>
                 <div class="image-submit">
                     <label class="upload-image centre" for="file">Choose a photo</label>
                     <input type="submit" name="submit">
