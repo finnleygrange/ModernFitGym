@@ -35,3 +35,20 @@ function togglePin() {
 function NewPin() {
   alert("New PIN requested! Check your email for the updated PIN.");
 }
+
+function showAddForm() {
+  document.getElementById("addForm").style.display = "block";
+  document.querySelector(".nutrition-table table").style.display = "none";
+}
+
+function removeSelectedRow(row) {
+  var table = document.querySelector(".nutrition-table table");
+  var rowCount = table.rows.length;
+
+  if (rowCount > 1) {
+    var rowIndex = row.parentNode.parentNode.rowIndex;
+    table.deleteRow(rowIndex);
+  } else {
+    alert("No rows to remove.");
+  }
+}

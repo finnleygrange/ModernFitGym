@@ -35,3 +35,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.icon {
+  margin-right: 1rem;
+}

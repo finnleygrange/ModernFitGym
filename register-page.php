@@ -26,3 +26,4 @@
         </form>
     </div>
 </div>
+<?php include("includes/views/footer.php") ?>

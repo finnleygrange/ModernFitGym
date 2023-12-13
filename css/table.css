@@ -27,7 +27,7 @@ tbody tr:hover {
 
 .nutrion-table-btn {
   position: absolute;
-  bottom: 140px; /* Adjust the distance from the bottom */
+  bottom: 140px;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -38,13 +38,11 @@ tbody tr:hover {
   margin: 0 10px;
   font-size: 16px;
   cursor: pointer;
- background-color: #483D8B; /*  Change to any colour youse want */
-  color: white;
+  background-color: #6494ed;
   border: none;
   border-radius: 5px;
 }
 
 .nutrion-table-btn button:hover {
-  background-color: #6A5ACD;
+  background-color: #5884d6;
 }
-

@@ -1,7 +1,4 @@
-<?php 
-include("includes/views/header.php");
-
-?>
+<?php include("includes/views/header.php"); ?>
 
 <div class="main-container">
     <div class="member-area">

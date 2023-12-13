@@ -21,7 +21,8 @@ form .form-group {
 }
 
 form input[type="text"],
-form input[type="password"] {
+form input[type="password"],
+form input[type="number"] {
   width: 100%;
   padding: 10px;
   border: 1px solid #27374d;

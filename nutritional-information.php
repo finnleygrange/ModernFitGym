@@ -66,53 +66,54 @@ $result = mysqli_query($con, $sql);
             </tbody>
         </table>
     </div>
-    <div class = "nutrion-table-btn">
+    <div class="nutrion-table-btn">
         <button type="button" onclick="showAddForm()">Add</button>
-        <button type = "button" onclick="removeLastRow()">Remove</button>
+        <button type="button" onclick="removeLastRow()">Remove</button>
     </div>
 
- <form id="addForm" style="display: none;" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-            <label for="foodName">Food Name:</label>
-            <input type="text" id="foodName" name="foodName" required>
+    <form id="addForm" style="display: none;" method="post"
+        action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <label for="foodName">Food Name:</label>
+        <input type="text" id="foodName" name="foodName" required>
 
-            <label for="calorieCount">Calorie Count:</label>
-            <input type="number" id="calorieCount" name="calorieCount" required>
+        <label for="calorieCount">Calorie Count:</label>
+        <input type="number" id="calorieCount" name="calorieCount" required>
 
-            <label for="protein">Protein:</label>
-            <input type="number" id="protein" name="protein" step="0.1" required>
+        <label for="protein">Protein:</label>
+        <input type="number" id="protein" name="protein" step="0.1" required>
 
-            <label for="carbohydrates">Carbohydrates:</label>
-            <input type="number" id="carbohydrates" name="carbohydrates" step="0.1" required>
+        <label for="carbohydrates">Carbohydrates:</label>
+        <input type="number" id="carbohydrates" name="carbohydrates" step="0.1" required>
 
-            <label for="fat">Fat:</label>
-            <input type="number" id="fat" name="fat" step="0.1" required>
+        <label for="fat">Fat:</label>
+        <input type="number" id="fat" name="fat" step="0.1" required>
 
-            <label for="fiber">Fiber:</label>
-            <input type="number" id="fiber" name="fiber" step="0.1" required>
+        <label for="fiber">Fiber:</label>
+        <input type="number" id="fiber" name="fiber" step="0.1" required>
 
-            <button type="submit" name="addNutritionalInfo">Add</button>
-        </form>
-    </div>
+        <button type="submit" name="addNutritionalInfo">Add</button>
+    </form>
+</div>
 
-    <script>
-        function showAddForm() {
-            document.getElementById('addForm').style.display = 'block';
-            document.querySelector('.nutrition-table table').style.display = 'none';
-        }
+<script>
+function showAddForm() {
+    document.getElementById('addForm').style.display = 'block';
+    document.querySelector('.nutrition-table table').style.display = 'none';
+}
 
-        function removeLastRow() {
-            var table = document.querySelector('.nutrition-table table');
-            var rowCount = table.rows.length;
+function removeLastRow() {
+    var table = document.querySelector('.nutrition-table table');
+    var rowCount = table.rows.length;
 
-            if (rowCount > 1) {
-                table.deleteRow(rowCount - 1);
-            } else {
-                alert("No rows to remove.");
-            }
-        }
-    
-    </script>
+    if (rowCount > 1) {
+        table.deleteRow(rowCount - 1);
+    } else {
+        alert("No rows to remove.");
+    }
+}
+</script>
 </body>
+
 </html>
 
 <?php

@@ -43,3 +43,7 @@ input[type="file"] {
   cursor: pointer;
   border-radius: 5px;
 }
+
+.image-submit input[type="submit"]:hover {
+  background-color: #5884d6;
+}
