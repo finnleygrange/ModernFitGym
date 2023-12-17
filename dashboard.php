@@ -33,11 +33,11 @@ include("includes/views/header.php");
                         echo '<li><a href="log-page.php">Nutrition & Exercise Log</a></li>';
                     } elseif ($userRole === "trainer") {
                         echo '<li><a href="pin-details.php">Pin</a></li>';
-                        echo '<li><a href="trainer-option1.php">Trainer Option 1</a></li>';
+                        echo '<li><a href="nutritional-information.php">Nutrition</a></li>';
                         echo '<li><a href="trainer-option2.php">Trainer Option 2</a></li>';
                     } elseif ($userRole === "admin") {
                         echo '<li><a href="pin-details.php">Pin</a></li>';
-                        echo '<li><a href="admin-option1.php">Admin Option 1</a></li>';
+                        echo '<li><a href="nutritional-information.php">Nutrition</a></li>';
                         echo '<li><a href="admin-option2.php">Admin Option 2</a></li>';
                     }
                 ?>

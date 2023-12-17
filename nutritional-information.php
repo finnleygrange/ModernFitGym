@@ -17,7 +17,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["addNutritionalInfo"]))
             VALUES ('$foodName', $calorieCount, $protein, $carbohydrates, $fat, $fiber)";
 
     if (mysqli_query($con, $sql)) {
-        //
+     unset($_POST);
+     header("Refresh:0");
     } else {
         echo "<script>alert('Error adding nutritional information: " . mysqli_error($con) . "');</script>";
     }
@@ -65,12 +66,17 @@ $result = mysqli_query($con, $sql);
             echo "<td>" . $row["Carbohydrates"] . "</td>";
             echo "<td>" . $row["Fat"] . "</td>";
             echo "<td>" . $row["Fiber"] . "</td>";
-            echo "<td>
-                        <form method='post' action='" . htmlspecialchars($_SERVER["PHP_SELF"]) . "'>
-                        <input type='hidden' name='removeFoodID' value='" . $row["FoodID"] . "'>
-                        <button type='submit' name='removeNutritionalInfo'>Remove</button>
+            $userRole = $_SESSION['userRole'];
+            if ($userRole !== 'member') {
+                    echo "<td>
+        
+                    <form method='post' action='" . htmlspecialchars($_SERVER["PHP_SELF"]) . "'>
+                    <input type='hidden' name='removeFoodID' value='" . $row["FoodID"] . "'>
+                    <button type='submit' name='removeNutritionalInfo'>Remove</button>
                     </form>
-                  </td>";
+                    </td>";
+            }
+
             echo "</tr>";
         }
     } else {
@@ -81,7 +87,14 @@ $result = mysqli_query($con, $sql);
         </table>
     </div>
     <div class="nutrion-table-btn">
-        <button type="button" onclick="showAddForm()">Add</button>
+        <?php 
+        
+        $userRole = $_SESSION['userRole'];
+        if ($userRole !== 'member') {
+            echo "<button type='button' onclick='showAddForm()'>Add</button>";
+        }
+        ?>
+
     </div>
 
     <form id="addForm" style="display: none;" method="post"

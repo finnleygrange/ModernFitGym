@@ -12,6 +12,10 @@ $allowedFileSize = 500000; //Max file size
 $fileAllowed = 1;
 $errorMsg;
 
+if ($_FILES["file"]["tmp_name"] == null){
+    header("Location: ".$_SERVER['HTTP_REFERER']);//Redirects back to profile page.
+}
+
 $fileSizeCheck = getimagesize($_FILES["file"]["tmp_name"]);
 if ($fileSizeCheck == false){
     //Image is fake
@@ -38,18 +42,37 @@ if ($fileType != "png" && $fileType != "jpg" && $fileType != "jpeg"){
 }
 
 if ($fileAllowed == 0){
-    session_start();
     $_SESSION["errorMsg"] = $errorMsg;
     $_SESSION["profilePicture"] = $fileDir;
 } else {
     $fileDir = "pfps/" . basename($_FILES["file"]["name"]);
     move_uploaded_file(($_FILES["file"]["tmp_name"]), $fileDir);
-    session_start();
     $_SESSION["pfp"] = basename($_FILES["file"]["name"]);
-    $id = $_SESSION['id'];
-    $pfpPath = 'includes/pfps/' . $_SESSION["pfp"];
-    $query = "INSERT INTO pfps (id,pfp) VALUES ('$id', '$pfpPath')";
+    $userAlreadyHasPfp = false;
+    $id = $_SESSION["id"];
+    $pfpPath = $_SESSION["pfp"];
+    $userId = $_SESSION["id"];
+    $query = "SELECT * FROM pfps";
     $result = mysqli_query($con, $query);
+    if ($result && mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+                if ($row["id"] == $userId) {
+                    $userAlreadyHasPfp = true;
+                }
+        }
+    }
+
+    if ($userAlreadyHasPfp) {
+        $query = "UPDATE pfps
+        SET pfp = '$pfpPath'
+        WHERE id = $id";
+        $result = mysqli_query($con, $query);
+    } else {
+        $query = "INSERT INTO pfps (id,pfp) VALUES ('$id', '$pfpPath')";
+        $result = mysqli_query($con, $query);
+    }
+
+
 }
 
 header("Location: ".$_SERVER['HTTP_REFERER']);//Redirects back to profile page.

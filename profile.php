@@ -15,9 +15,9 @@
         </div>
         <div class='profile-options'>
             <form action="includes/pfp-upload.php" method="post" enctype="multipart/form-data">
-                <?php if(isset($_SESSION['profilePicture'])) {$pfp = $_SESSION["profilePicture"]; echo "<img src=$pfp>";} ?>
                 <input type="file" name="file" id="file" accept="image/*" onchange="previewImage()">
                 <?php 
+                include("includes/config.php");
                 if (isset($_SESSION["pfp"])){
                     $files = glob('includes/pfps/*.*');
                     $pfpPath = 'includes/pfps/' . $_SESSION["pfp"];
@@ -26,7 +26,18 @@
                             echo "<script>document.getElementById('preview-image').setAttribute('src','$pfpPath');</script>";
                         };
                     };
-                    
+                } else {
+                    $userId = $_SESSION["id"];
+                    $query = "SELECT * FROM pfps";
+                    $result = mysqli_query($con, $query);
+                    if ($result && mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            if ($row["id"] == $userId) {
+                                $_SESSION["pfp"] = $row["pfp"];
+                                header("Refresh:0");
+                            }
+                        }
+                    }
                 }
                 ?>
                 <div class="image-submit">

@@ -19,8 +19,17 @@ if (isset($_POST["email"])) {
 
         if ($result && mysqli_num_rows($result) > 0) {
             $row = mysqli_fetch_assoc($result);
+
+            $roleConverted;
+            if ($role == 'Members'){
+                $roleConverted = 'Member';
+            } else if ($role == 'Admins') {
+                $roleConverted = 'Admin';
+            } else if ($role == 'Trainers'){
+                $roleConverted = 'Trainer';
+            }
             
-            $_SESSION["id"] = $row[$role . "ID"];
+            $_SESSION["id"] = $row[$roleConverted . "ID"];
             $_SESSION["firstName"] = $row["FirstName"];
             $_SESSION["lastName"] = $row["LastName"];
             $_SESSION["email"] = $row["Email"];

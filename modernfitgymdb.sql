@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2023 at 08:58 PM
+-- Generation Time: Dec 17, 2023 at 06:43 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -83,8 +83,18 @@ INSERT INTO `members` (`MemberID`, `FirstName`, `LastName`, `Email`, `PinNumber`
 (9, 'bbbb', 'bbbb', 'bbbbb', '325605', 'member'),
 (10, 'admin', 'admin', 'admin@admin.com', '571085', 'member'),
 (11, 'c', 'c', 'c@test.com', '154490', 'member'),
-(12, 'sadfsfad', 'd', 'd@test.com', '724448', 'member'),
-(13, 'finnley', 'grange', 'finnley@gmail.com', '172132', 'member');
+(12, 'dwa', 'd', 'd@test.com', '724448', 'member'),
+(13, 'finnley', 'grange', 'finnley@gmail.com', '172132', 'member'),
+(14, 'Elliot', 'Haigh', 'locktum713@gmail.com', '123456', 'admin'),
+(15, 'test', 'test', 'hello@gmail.com', '551255', 'member'),
+(16, 'testtest', 'testtest', 'test@email.com', '444942', 'member'),
+(17, 'testtest', 'testtest', 'test@email.com', '444942', 'member'),
+(18, 'testtest', 'testtest', 'testtest@email.com', '700448', 'member'),
+(19, 'testtest', 'testtest', 'testtest@email.com', '700448', 'member'),
+(20, 'testtest', 'testtest', 'testtesttest@email.com', '332719', 'member'),
+(21, 'testytesttest', 'testetstetstetst', 'test2@test.com', '310660', 'member'),
+(22, 'dwadawdaw', 'dwadawdaw', 'dwadwadaw', '585447', 'member'),
+(23, 'wdawdawfawd', 'wfawdawdasdw', 'dawdafawdawd', '259811', 'member');
 
 -- --------------------------------------------------------
 
@@ -109,7 +119,10 @@ CREATE TABLE `nutritionalinformation` (
 INSERT INTO `nutritionalinformation` (`FoodID`, `FoodName`, `CalorieCount`, `Protein`, `Carbohydrates`, `Fat`, `Fiber`) VALUES
 (8, 'Apple', 95, 0.5, 25, 0.3, 4.4),
 (9, 'Chicken Breast', 165, 31, 0, 3.6, 0),
-(10, 'Broccoli', 31, 2.5, 6, 0.3, 2.4);
+(10, 'Broccoli', 31, 2.5, 6, 0.3, 2.4),
+(11, 'Ham', 92, 3.4, 5.3, 2.4, 4.3),
+(22, 'Bacon', 112, 6.4, 3.4, 6.2, 2.4),
+(26, 'Pork', 124, 4.2, 5.2, 6.4, 5.3);
 
 -- --------------------------------------------------------
 
@@ -127,8 +140,12 @@ CREATE TABLE `pfps` (
 --
 
 INSERT INTO `pfps` (`id`, `pfp`) VALUES
-(0, 'includes/pfps/one piece wallpaper.jpg'),
-(0, 'includes/pfps/one piece wallpaper.jpg');
+(13, 'one piece wallpaper.jpg'),
+(12, 'one piece wallpaper.jpg'),
+(0, 'one piece wallpaper.jpg'),
+(0, 'one piece wallpaper.jpg'),
+(22, 'one piece wallpaper.jpg'),
+(23, 'one piece wallpaper.jpg');
 
 -- --------------------------------------------------------
 
@@ -228,13 +245,13 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `MemberID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `MemberID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `nutritionalinformation`
 --
 ALTER TABLE `nutritionalinformation`
-  MODIFY `FoodID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `FoodID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `trainers`
