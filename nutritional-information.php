@@ -24,7 +24,11 @@ include("includes/config.php");
                     <th>Carbohydrates</th>
                     <th>Fat</th>
                     <th>Fiber</th>
-                    <th></th>
+                    <?php 
+                        if ($userRole !== 'member') {
+                            echo "<th></th>";
+                        }
+                    ?>
                 </tr>
             </thead>
             <tbody>
