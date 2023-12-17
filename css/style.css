@@ -39,3 +39,7 @@ body {
 .icon {
   margin-right: 1rem;
 }
+
+.column {
+  flex-direction: column;
+}

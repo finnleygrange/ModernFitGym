@@ -1,6 +1,4 @@
-<?php 
-include("includes/views/header.php"); 
-?>
+<?php include("includes/views/header.php"); ?>
 <div class="main-container">
     <div class="dashboard">
 
@@ -46,4 +44,4 @@ include("includes/views/header.php");
     </div>
 </div>
 
-</html>
+<?php include("includes/views/footer.php"); ?>

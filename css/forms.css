@@ -6,7 +6,7 @@
   height: 100vh;
 }
 
-form {
+.form-container form {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -16,11 +16,11 @@ form {
   background-color: #27374d;
 }
 
-form .form-group {
+.form-container .form-group {
   margin-bottom: 20px;
 }
 
-form input[type="text"],
+.form-container input[type="text"],
 form input[type="password"],
 form input[type="number"] {
   width: 100%;
@@ -29,7 +29,7 @@ form input[type="number"] {
   border-radius: 5px;
 }
 
-form input[type="submit"] {
+.form-container input[type="submit"] {
   width: 100%;
   padding: 10px;
   border: none;
@@ -39,31 +39,31 @@ form input[type="submit"] {
   cursor: pointer;
 }
 
-form .forgot-pinNumber {
+.form-container .forgot-pinNumber {
   display: flex;
   justify-content: right;
   margin-top: 5px;
   font-size: 12px;
 }
 
-form .forgot-pinNumber a {
+.form-container .forgot-pinNumber a {
   color: #9db2bf;
   text-decoration: none;
 }
 
-.login-here a,
+.form-container .login-here a,
 .register-here a {
   text-decoration: none;
   color: #9db2bf;
 }
 
-form .form-title {
+.form-container form .form-title {
   font-size: 18px;
   font-weight: 300;
   color: #dde6ed;
 }
 
-.image-submit {
+.form-container .image-submit {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
