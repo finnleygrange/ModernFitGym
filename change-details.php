@@ -2,16 +2,33 @@
 
 
 
-<div class="main-container">
-    <div class="change-details">
-        <h1>Change Details</h1>
-        <p>Welcome, <?php echo $_SESSION['firstName']; ?>!</p>
-
+<div class="main-container column">
+    <div class="details">
+        <?php 
+        
+            echo "{$_SESSION["firstName"]}";
+            echo "{$_SESSION["lastName"]}";
+            echo "{$_SESSION["email"]}";
+        
+        ?>
+    </div>
+    <div class="form-container">
         <form action="includes/update-details.php" method="post">
-            <label for="newName">New Name:</label>
-            <input type="text" id="newName" name="newName" placeholder="Enter new name" required>
-            <br>
-            <input type="submit" value="Update Details">
+            <div class="form-group">
+                <label for="newFirstName">Update First Name:</label>
+                <input type="text" id="newFirstName" name="newFirstName" placeholder="Enter new first name" required>
+            </div>
+            <div class="form-group">
+                <label for="newLastName">Update Last Name:</label>
+                <input type="text" id="newLastName" name="newLastName" placeholder="Enter new last name" required>
+            </div>
+            <div class="form-group">
+                <label for="newEmail">Update Email:</label>
+                <input type="text" id="newEmail" name="newEmail" placeholder="Enter new Email" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Update Details">
+            </div>
         </form>
     </div>
 </div>
