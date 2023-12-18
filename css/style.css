@@ -7,6 +7,7 @@
 @import url("forms.css");
 @import url("dashboard.css");
 @import url("homepage.css");
+@import url("schedule.css");
 
 * {
   margin: 0;

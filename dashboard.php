@@ -26,7 +26,7 @@
                 <?php
                     if ($userRole === "member") {
                         echo '<li><a href="pin-details.php">Pin</a></li>';
-                        echo '<li><a href="dashboard.php">Schedule</a></li>';
+                        echo '<li><a href="schedule.php">Schedule</a></li>';
                         echo '<li><a href="nutritional-information.php">Nutrition</a></li>';
                         echo '<li><a href="log-page.php">Nutrition & Exercise Log</a></li>';
                     } elseif ($userRole === "trainer") {
