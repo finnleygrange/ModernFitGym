@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
 }
 
 .form-container form {
@@ -22,7 +22,8 @@
 
 .form-container input[type="text"],
 form input[type="password"],
-form input[type="number"] {
+form input[type="number"],
+form input[type="datetime-local"] {
   width: 100%;
   padding: 10px;
   border: 1px solid #27374d;

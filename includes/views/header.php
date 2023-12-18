@@ -28,29 +28,29 @@ session_start();
             <div class="header-right">
                 <ul>
                     <?php
-        if (isset($_SESSION["userRole"])) {
-            $userRole = $_SESSION["userRole"];
+                        if (isset($_SESSION["userRole"])) {
+                            $userRole = $_SESSION["userRole"];
 
-            echo '<li><a href="profile.php"><i class="fa-regular fa-user fa-xl icon" style="color: #6494ed;"></i>Profile</a></li>';
+                            echo '<li><a href="profile.php"><i class="fa-regular fa-user fa-xl icon" style="color: #6494ed;"></i>Profile</a></li>';
 
-            echo '<li><a href="dashboard.php"><i class="fa-regular fa-chart-bar fa-xl icon" style="color: #6494ed;"></i>';
+                            echo '<li><a href="dashboard.php"><i class="fa-regular fa-chart-bar fa-xl icon" style="color: #6494ed;"></i>';
 
-            if ($userRole === "member") {
-                echo 'Member Dashboard';
-            } 
-            if ($userRole === "trainer") {
-                echo 'Trainer Dashboard';
-            } 
-            if ($userRole === "admin") {
-                echo 'Admin Dashboard';
-            }
-            echo '</a></li>';
+                            if ($userRole === "member") {
+                                echo 'Member Dashboard';
+                            } 
+                            if ($userRole === "trainer") {
+                                echo 'Trainer Dashboard';
+                            } 
+                            if ($userRole === "admin") {
+                                echo 'Admin Dashboard';
+                            }
+                            echo '</a></li>';
 
-            echo '<li><a href="includes/logout.php"><i class="fa-solid fa-right-from-bracket fa-xl icon" style="color: #6494ed;"></i>Logout</a></li>';
-        } else {
-            echo '<li><a href="login-page.php"><i class="fa-regular fa-user fa-xl icon" style="color: #6494ed;"></i>Login</a></li>';
-        }
-        ?>
+                            echo '<li><a href="includes/logout.php"><i class="fa-solid fa-right-from-bracket fa-xl icon" style="color: #6494ed;"></i>Logout</a></li>';
+                        } else {
+                            echo '<li><a href="login-page.php"><i class="fa-regular fa-user fa-xl icon" style="color: #6494ed;"></i>Login</a></li>';
+                        }
+                    ?>
                 </ul>
             </div>
 

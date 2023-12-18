@@ -15,7 +15,7 @@ if (isset($_POST["addNutritionalInfo"])) {
     $fiber = $_POST["fiber"];
 
     $sql = "INSERT INTO nutritionalinformation (FoodName, CalorieCount, Protein, Carbohydrates, Fat, Fiber)
-            VALUES ('$foodName', $calorieCount, $protein, $carbohydrates, $fat, $fiber)";
+            VALUES ($foodName, $calorieCount, $protein, $carbohydrates, $fat, $fiber)";
 
     mysqli_query($con, $sql);
 

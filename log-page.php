@@ -1,52 +1,106 @@
 <?php include("includes/views/header.php"); ?>
 
-<div class="main-container">
+<div class="main-container column">
     <section>
         <div class="nav-section">
             <ul>
-                <li>Workout</li>
-                <li>Nutrition</li>
+                <li><button class="nutrion-table-btn"><a href="log-workout-page.php">Log New Workout</a></button></li>
+                <li><button class="nutrion-table-btn"><a href="log-meal-page.php">Log New Meal</a></button></li>
             </ul>
         </div>
     </section>
-    <section class="form-container">
-        <form class action="process_workout.php" method="post">
-            <div class="form-group">
-                <h2 class="form-title">Workout Form</h2>
-            </div>
-            <div class="form-group">
-                <label for="exerciseDescription">Exercise Description:</label>
-                <input type="text" name="exerciseDescription" required>
-            </div>
-            <div class="form-group">
-                <label for="exerciseDuration">Exercise Duration (minutes):</label>
-                <input type="number" name="exerciseDuration" required>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Submit Workout Log" id="submit">
-            </div>
-        </form>
+    <section class="row">
     </section>
-    <section class="form-container">
-        <form action="process_nutrition.php" method="post">
-            <div class="form-group">
-                <h2 class="form-title">Nutrition Form</h2>
-            </div>
-            <div class="form-group">
-                <label for="mealDescription">Meal Description:</label>
-                <input type="text" name="mealDescription" required>
-            </div>
-            <div class="form-group">
-                <label for="mealPortion">Meal Portion (grams):</label>
-                <input type="number" name="mealPortion" required>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Submit Nutrition Log" id="submit">
-            </div>
-        </form>
-    </section>
-    <section>
-        <?php include("includes/display-workouts.php"); ?>
-    </section>
+
+    <div class="nutrition-table">
+        <h2>Meal Logs</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Meal_ID</th>
+                    <th>Date</th>
+                    <th>MealDescription</th>
+                    <th>MealPortion</th>
+                    <th></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                    include("includes/config.php");
+
+                    if (!$con) {
+                        die("Connection failed: " . mysqli_connect_error());
+                    }
+                
+                    $mealSql = "SELECT * FROM meals WHERE MemberID = $_SESSION[id]";
+                    $mealResult = mysqli_query($con, $mealSql);
+                    
+                    if (mysqli_num_rows($mealResult) > 0) {
+                        while ($row = mysqli_fetch_assoc($mealResult)) {
+                            echo "<tr>";
+                            echo "<td>" . $row["MealID"] . "</td>";
+                            echo "<td>" . $row["Date"] . "</td>";
+                            echo "<td>" . $row["MealDescription"] . "</td>";
+                            echo "<td>" . $row["MealPortion"] . "</td>";
+                            echo    "<td>
+                                    <form method='post' action='includes/remove-meal.php''>
+                                    <input type='hidden' name='removeMealID' value='" . $row["MealID"] . "'>
+                                    <button class='nutrion-table-btn' type='submit' name='removeMeal'>Remove</button>
+                                    </form>
+                                    </td>";
+                        }
+                    } else {
+                        echo "<tr>
+                            <td colspan='5'>No meal data available</td>
+                        </tr>";
+                    }
+                    echo "</tr>";
+                ?>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="nutrition-table">
+        <h2>Workout Logs</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Workout_ID</th>
+                    <th>Date</th>
+                    <th>ExerciseDescription</th>
+                    <th>ExerciseDuration</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                    $workoutSql = "SELECT * FROM workouts WHERE MemberID = $_SESSION[id]";
+                    $workoutResult = mysqli_query($con, $workoutSql);
+                    
+                    if (mysqli_num_rows($workoutResult) > 0) {
+                        while ($row = mysqli_fetch_assoc($workoutResult)) {
+                            echo "<tr>";
+                            echo "<td>" . $row["WorkoutID"] . "</td>";
+                            echo "<td>" . $row["Date"] . "</td>";
+                            echo "<td>" . $row["ExerciseDescription"] . "</td>";
+                            echo "<td>" . $row["ExerciseDuration"] . "</td>";
+                            echo    "<td>
+                                    <form method='post' action='includes/remove-workout.php''>
+                                    <input type='hidden' name='removeWorkoutID' value='" . $row["WorkoutID"] . "'>
+                                    <button class='nutrion-table-btn' type='submit' name='removeWorkout'>Remove</button>
+                                    </form>
+                                    </td>";
+                        }
+                    } else {
+                        echo "<tr>
+                            <td colspan='5'>No workout data available</td>
+                        </tr>";
+                    }
+                    echo "</tr>";
+                ?>
+            </tbody>
+        </table>
+    </div>
 </div>
 <?php include("includes/views/footer.php") ?>

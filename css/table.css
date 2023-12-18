@@ -1,10 +1,11 @@
 .nutrition-table {
   display: flex;
   flex-direction: column;
+  padding: 1.5rem;
+  width: 80%;
 }
 
 .nutrition-table table {
-  width: 100%;
   border-collapse: collapse;
 }
 
@@ -12,6 +13,9 @@
 .nutrition-table td {
   padding: 20px;
   background-color: #354864;
+  border: 1px solid #27374d;
+  text-align: left;
+  width: 5%;
 }
 
 .nutrition-table th {
