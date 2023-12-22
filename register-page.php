@@ -18,6 +18,9 @@
                 <input type="text" name="lastName" id="lastName" placeholder="Last name" required>
             </div>
             <div class="form-group">
+                <p>Your information is strictly used for authentication purposes.</p>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Submit" id="submit">
             </div>
             <div class="form-group">
