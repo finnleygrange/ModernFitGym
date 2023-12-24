@@ -42,7 +42,7 @@
                             echo "<td>" . $row["MealID"] . "</td>";
                             echo "<td>" . $row["Date"] . "</td>";
                             echo "<td>" . $row["MealDescription"] . "</td>";
-                            echo "<td>" . $row["MealPortion"] . "</td>";
+                            echo "<td>" . $row["MealPortion"] . " grams" . "</td>";
                             echo    "<td>
                                     <form method='post' action='includes/remove-meal.php''>
                                     <input type='hidden' name='removeMealID' value='" . $row["MealID"] . "'>
@@ -84,7 +84,7 @@
                             echo "<td>" . $row["WorkoutID"] . "</td>";
                             echo "<td>" . $row["Date"] . "</td>";
                             echo "<td>" . $row["ExerciseDescription"] . "</td>";
-                            echo "<td>" . $row["ExerciseDuration"] . "</td>";
+                            echo "<td>" . $row["ExerciseDuration"] . " minutes" . "</td>";
                             echo    "<td>
                                     <form method='post' action='includes/remove-workout.php''>
                                     <input type='hidden' name='removeWorkoutID' value='" . $row["WorkoutID"] . "'>

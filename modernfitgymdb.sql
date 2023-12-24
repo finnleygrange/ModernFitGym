@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 17, 2023 at 06:43 PM
+-- Generation Time: Dec 24, 2023 at 06:51 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -51,6 +51,27 @@ CREATE TABLE `logs` (
   `ExerciseDescription` text DEFAULT NULL,
   `ExerciseDuration` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `meals`
+--
+
+CREATE TABLE `meals` (
+  `MemberID` int(11) NOT NULL,
+  `MealID` int(11) NOT NULL,
+  `Date` text NOT NULL,
+  `MealDescription` text NOT NULL,
+  `MealPortion` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `meals`
+--
+
+INSERT INTO `meals` (`MemberID`, `MealID`, `Date`, `MealDescription`, `MealPortion`) VALUES
+(13, 0, '2023-12-24T17:00', 'Chicken and rice', '50');
 
 -- --------------------------------------------------------
 
@@ -140,7 +161,7 @@ CREATE TABLE `pfps` (
 --
 
 INSERT INTO `pfps` (`id`, `pfp`) VALUES
-(13, 'one piece wallpaper.jpg'),
+(13, 'icons8-settings-50.png'),
 (12, 'one piece wallpaper.jpg'),
 (0, 'one piece wallpaper.jpg'),
 (0, 'one piece wallpaper.jpg'),
@@ -167,6 +188,30 @@ CREATE TABLE `progress` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `schedule`
+--
+
+CREATE TABLE `schedule` (
+  `MemberID` int(11) NOT NULL,
+  `Monday` text NOT NULL,
+  `Tuesday` text NOT NULL,
+  `Wednesday` text NOT NULL,
+  `Thursday` text NOT NULL,
+  `Friday` text NOT NULL,
+  `Saturday` text NOT NULL,
+  `Sunday` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `schedule`
+--
+
+INSERT INTO `schedule` (`MemberID`, `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday`, `Saturday`, `Sunday`) VALUES
+(13, 'Arms', 'Legs', 'Chest', 'Arms and legs', 'Chest', 'Rest', 'Legs');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `trainers`
 --
 
@@ -185,6 +230,27 @@ CREATE TABLE `trainers` (
 
 INSERT INTO `trainers` (`TrainerID`, `FirstName`, `LastName`, `Email`, `PinNumber`, `UserRole`) VALUES
 (1, 'test', 'test2', 'test@test.com', '123456', 'trainer');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `workouts`
+--
+
+CREATE TABLE `workouts` (
+  `MemberID` int(11) NOT NULL,
+  `WorkoutID` int(11) NOT NULL,
+  `Date` text NOT NULL,
+  `ExerciseDescription` text NOT NULL,
+  `ExerciseDuration` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `workouts`
+--
+
+INSERT INTO `workouts` (`MemberID`, `WorkoutID`, `Date`, `ExerciseDescription`, `ExerciseDuration`) VALUES
+(13, 0, '2023-12-24T16:00', 'Did arms and legs', '45');
 
 --
 -- Indexes for dumped tables

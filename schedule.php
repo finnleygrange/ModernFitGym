@@ -7,56 +7,78 @@
             <thead>
                 <tr>
                     <th>Day</th>
-                    <th>8:00AM</th>
-                    <th>10:00AM</th>
-                    <th>12:00PM</th>
-                    <th>17:00PM</th>
-                    <th>19:00PM</th>
+                    <th>Workout</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td class="day">Monday</td>
-                    <td class="workout">Chest Workout</td>
-                    <td class="workout">Cardio</td>
-                    <td class="workout">Yoga</td>
-                    <td class="workout"></td>
-                    <td class="workout"></td>
-                </tr>
-                <tr>
-                    <td class="day">Tuesday</td>
-                    <td class="workout">Back Workout</td>
-                    <td class="workout">HIIT</td>
-                    <td class="workout">Stretching</td>
-                    <td class="workout"></td>
-                    <td class="workout"></td>
-                </tr>
-                <tr>
-                    <td class="day">Wednesday</td>
-                    <td class="workout">Leg Workout</td>
-                    <td class="workout">Cardio</td>
-                    <td class="workout">Core Training</td>
-                    <td class="workout"></td>
-                    <td class="workout"></td>
-                </tr>
-                <tr>
-                    <td class="day">Thursday</td>
-                    <td class="workout">Shoulder Workout</td>
-                    <td class="workout">Cardio</td>
-                    <td class="workout">Pilates</td>
-                    <td class="workout"></td>
-                    <td class="workout"></td>
-                </tr>
-                <tr>
-                    <td class="day">Friday</td>
-                    <td class="workout">Arm Workout</td>
-                    <td class="workout">HIIT</td>
-                    <td class="workout">Yoga</td>
-                    <td class="workout"></td>
-                    <td class="workout"></td>
-                </tr>
+                <?php 
+                include("includes/config.php");
+                
+                $memberID = $_SESSION["id"];
+                $query = "SELECT * FROM schedule WHERE MemberID = $memberID";
+                $result = mysqli_query($con,$query);
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<tr>
+                        <td class='day'>Monday</td>
+                        <td>$row[Monday]</td<
+                    </tr>
+                    <tr>
+                        <td class='day'>Tuesday</td>
+                        <td>$row[Tuesday]</td<
+                    </tr>
+                    <tr>
+                        <td class='day'>Wednesday</td>
+                        <td>$row[Wednesday]</td<
+                    </tr>
+                    <tr>
+                        <td class='day'>Thursday</td>
+                        <td>$row[Thursday]</td<
+                    </tr>
+                    <tr>
+                        <td class='day'>Friday</td>
+                        <td>$row[Friday]</td<
+                    </tr>
+                    <tr>
+                        <td class='day'>Saturday</td>
+                        <td>$row[Saturday]</td<
+                    </tr>
+                    <tr>
+                        <td class='day'>Sunday</td>
+                        <td>$row[Sunday]</td<
+                    </tr>";
+                    }
+                } else {
+                    echo "<tr>
+                        <td class='day'>Monday</td>
+                    </tr>
+                    <tr>
+                        <td class='day'>Tuesday</td>
+                    </tr>
+                    <tr>
+                        <td class='day'>Wednesday</td>
+                    </tr>
+                    <tr>
+                        <td class='day'>Thursday</td>
+                    </tr>
+                    <tr>
+                        <td class='day'>Friday</td>
+                    </tr>
+                    <tr>
+                        <td class='day'>Saturday</td>
+                    </tr>
+                    <tr>
+                        <td class='day'>Sunday</td>
+                    </tr>";
+                }
+                ?>
+                
+
+
             </tbody>
+
         </table>
+        <a href='log-schedule.php'><button class='nutrion-table-btn' type='button'>Add</button></a>
     </div>
 </div>
 

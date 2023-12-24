@@ -10,7 +10,7 @@
             </div>
             <div class="form-group">
                 <input type="password" name="pinNumber" id="pinNumber" placeholder="PIN" required>
-                <p class="forgot-pinNumber"><a href="#">Forgot PIN?</a></p>
+                <p class="forgot-pinNumber"><a href="forgot-pin.php">Forgot PIN?</a></p>
             </div>
             <div class="form-group">
                 <input type="submit" value="Login" id="submit">
