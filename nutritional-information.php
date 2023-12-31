@@ -8,11 +8,11 @@ include("includes/config.php");
         $userRole = $_SESSION['userRole'];
         if ($userRole !== 'member') {
             echo "<div style='width:75px;'>";
-            echo "<a href='add-nutrition-page.php'><button class='nutrion-table-btn' type='button' onclick='showAddForm()'>Add</button></a>";
+            echo "<a href='add-nutrition-page.php'><button class='table-btn' type='button' onclick='showAddForm()'>Add</button></a>";
             echo "</div>";
         }
     ?>
-    <div class="nutrition-table">
+    <div class="table">
         <h2>Nutritional Information Table</h2>
         <table>
             <thead>
@@ -52,7 +52,7 @@ include("includes/config.php");
                         
                                     <form method='post' action='includes/remove-nutrition.php''>
                                     <input type='hidden' name='removeFoodID' value='" . $row["FoodID"] . "'>
-                                    <button class='nutrion-table-btn' type='submit' name='removeNutritionalInfo'>Remove</button>
+                                    <button class='table-btn' type='submit' name='removeNutritionalInfo'>Remove</button>
                                     </form>
                                     </td>";
                             }

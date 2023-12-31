@@ -4,15 +4,15 @@
     <section>
         <div class="nav-section">
             <ul>
-                <li><button class="nutrion-table-btn"><a href="log-workout-page.php">Log New Workout</a></button></li>
-                <li><button class="nutrion-table-btn"><a href="log-meal-page.php">Log New Meal</a></button></li>
+                <li><button class="table-btn"><a href="log-workout-page.php">Log New Workout</a></button></li>
+                <li><button class="table-btn"><a href="log-meal-page.php">Log New Meal</a></button></li>
             </ul>
         </div>
     </section>
     <section class="row">
     </section>
 
-    <div class="nutrition-table">
+    <div class="table">
         <h2>Meal Logs</h2>
         <table>
             <thead>
@@ -46,7 +46,7 @@
                             echo    "<td>
                                     <form method='post' action='includes/remove-meal.php''>
                                     <input type='hidden' name='removeMealID' value='" . $row["MealID"] . "'>
-                                    <button class='nutrion-table-btn' type='submit' name='removeMeal'>Remove</button>
+                                    <button class='table-btn' type='submit' name='removeMeal'>Remove</button>
                                     </form>
                                     </td>";
                         }
@@ -61,7 +61,7 @@
         </table>
     </div>
 
-    <div class="nutrition-table">
+    <div class="table">
         <h2>Workout Logs</h2>
         <table>
             <thead>
@@ -82,13 +82,13 @@
                         while ($row = mysqli_fetch_assoc($workoutResult)) {
                             echo "<tr>";
                             echo "<td>" . $row["WorkoutID"] . "</td>";
-                            echo "<td>" . $row["Date"] . "</td>";
+                            echo "<td>" . date("Y-m-d H:i", strtotime($row["Date"])) . "</td>";
                             echo "<td>" . $row["ExerciseDescription"] . "</td>";
                             echo "<td>" . $row["ExerciseDuration"] . " minutes" . "</td>";
                             echo    "<td>
                                     <form method='post' action='includes/remove-workout.php''>
                                     <input type='hidden' name='removeWorkoutID' value='" . $row["WorkoutID"] . "'>
-                                    <button class='nutrion-table-btn' type='submit' name='removeWorkout'>Remove</button>
+                                    <button class='table-btn' type='submit' name='removeWorkout'>Remove</button>
                                     </form>
                                     </td>";
                         }

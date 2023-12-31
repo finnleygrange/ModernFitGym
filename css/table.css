@@ -1,16 +1,16 @@
-.nutrition-table {
+.table {
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
   width: 80%;
 }
 
-.nutrition-table table {
+.table table {
   border-collapse: collapse;
 }
 
-.nutrition-table th,
-.nutrition-table td {
+.table th,
+.table td {
   padding: 20px;
   background-color: #354864;
   border: 1px solid #27374d;
@@ -18,11 +18,11 @@
   width: 5%;
 }
 
-.nutrition-table th {
+.table th {
   background-color: #27374d;
 }
 
-.nutrion-table-btn {
+.table-btn {
   width: 100%;
   padding: 10px;
   border: none;

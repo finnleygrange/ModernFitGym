@@ -72,13 +72,13 @@
                     </tr>";
                 }
                 ?>
-                
+
 
 
             </tbody>
 
         </table>
-        <a href='log-schedule.php'><button class='nutrion-table-btn' type='button'>Add</button></a>
+        <a href='log-schedule.php'><button class='table-btn' type='button'>Edit Schedule</button></a>
     </div>
 </div>
 

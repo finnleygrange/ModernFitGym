@@ -76,3 +76,7 @@ section {
   text-decoration: none;
   color: #dde6ed;
 }
+
+li {
+  list-style: none;
+}

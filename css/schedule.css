@@ -1,37 +1,26 @@
 .schedule-container {
-   max-width: 1000px;
-   margin: 10px auto;
-   background-color: #27374d;
-   padding: 20px;
-   border-radius: 8px;
-   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-   text-align: center;
-   color: #ffffff;
+  max-width: 1000px;
+  margin: 10px auto;
+  background-color: #27374d;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .schedule-table {
-   width: 100%;
-   border-collapse: collapse;
-   margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0 20px 0;
 }
 
-th, td {
-   padding: 12px;
-   text-align: left;
-   border-bottom: 1px solid #ddd;
+.schedule-table th,
+.schedule-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
 }
 
-th {
-   background-color: #f2f2f2;
-   color: #000000;
+.schedule-table th {
+  background-color: #f2f2f2;
+  color: #000000;
 }
-
-.day:hover, .workout:hover {
-   background-color: #f5f5f5;
-   color: #000000;
-   text-decoration: double;
-}
-

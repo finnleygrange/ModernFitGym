@@ -36,7 +36,7 @@
                     } elseif ($userRole === "admin") {
                         echo '<li><a href="pin-details.php">Pin</a></li>';
                         echo '<li><a href="nutritional-information.php">Nutrition</a></li>';
-                        echo '<li><a href="admin-option2.php">Admin Option 2</a></li>';
+                        echo '<li><a href="admin-edit.php">Edit Members</a></li>';
                     }
                 ?>
             </ul>
