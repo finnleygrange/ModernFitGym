@@ -7,16 +7,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $lastName = $_POST['lastName'];
     $email = $_POST['email'];
     $memberType = $_POST['memberType'];
+    $pinNumber = rand(100000, 900000);
 
     switch ($memberType) {
         case 'members':
-            $insertQuery = "INSERT INTO members (FirstName, LastName, Email) VALUES ('$firstName', '$lastName', '$email')";
+            $insertQuery = "INSERT INTO members (FirstName, LastName, Email, PinNumber) VALUES ('$firstName', '$lastName', '$email', '$pinNumber')";
             break;
         case 'admins':
-            $insertQuery = "INSERT INTO admins (FirstName, LastName, Email) VALUES ('$firstName', '$lastName', '$email')";
+            $insertQuery = "INSERT INTO admins (FirstName, LastName, Email, PinNumber) VALUES ('$firstName', '$lastName', '$email', '$pinNumber')";
             break;
         case 'trainers':
-            $insertQuery = "INSERT INTO trainers (FirstName, LastName, Email) VALUES ('$firstName', '$lastName', '$email')";
+            $insertQuery = "INSERT INTO trainers (FirstName, LastName, Email, PinNumber) VALUES ('$firstName', '$lastName', '$email', '$pinNumber')";
             break;
         default:
             break;
