@@ -32,7 +32,7 @@
                     } elseif ($userRole === "trainer") {
                         echo '<li><a href="pin-details.php">Pin</a></li>';
                         echo '<li><a href="nutritional-information.php">Nutrition</a></li>';
-                        echo '<li><a href="trainer-option2.php">Trainer Option 2</a></li>';
+                        echo '<li><a href="progress.php">Track Progress</a></li>';
                     } elseif ($userRole === "admin") {
                         echo '<li><a href="pin-details.php">Pin</a></li>';
                         echo '<li><a href="nutritional-information.php">Nutrition</a></li>';
