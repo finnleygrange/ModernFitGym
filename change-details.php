@@ -6,9 +6,9 @@
     <div class="details">
         <?php 
         
-            echo "{$_SESSION["firstName"]}";
-            echo "{$_SESSION["lastName"]}";
-            echo "{$_SESSION["email"]}";
+            echo "<h2>{$_SESSION["firstName"]}</h2>";
+            echo "<h2>{$_SESSION["lastName"]}</h2>";
+            echo "<h2>{$_SESSION["email"]}</h2>";
         
         ?>
     </div>
